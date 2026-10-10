@@ -1,0 +1,975 @@
+/* ========================================
+   Travel Website Prototype - Main Stylesheet
+   Scrapbook Design Style for Adults 65+
+   ======================================== */
+
+/* ========================================
+   1. ROOT & TYPOGRAPHY
+   ======================================== */
+
+:root {
+  /* Colour Palette - HEX Values */
+  --heading-gold: #FFBA08;
+  --accent-orange: #E85D04;
+  --paragraph-cream: #F7EFCA;
+  --accent-brown: #382C23;
+  --mustard-gold: #807E1E;
+  --bg-army-green: #3E5526;
+  --bg-cream: #F7EFCA;
+  --bg-mango: #FFAD4F;
+  --bg-charcoal: #382C23;
+  --bg-burnt-orange: #AE4202;
+  
+  /* Typography */
+  --font-primary: 'Georgia', serif;
+  --font-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Spacing System */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  
+  /* Typography Scale */
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  color: var(--accent-brown);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ========================================
+   2. TYPOGRAPHY & HEADINGS
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+  color: var(--heading-gold);
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-top: var(--space-lg);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+}
+
+a {
+  color: var(--accent-orange);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+a:hover, a:focus {
+  color: var(--mustard-gold);
+  text-decoration: underline;
+}
+
+/* Focus visible for accessibility */
+a:focus-visible {
+  outline: 3px solid var(--heading-gold);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   3. SKIP LINK (WCAG Accessibility)
+   ======================================== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--heading-gold);
+  color: var(--accent-brown);
+  padding: var(--space-sm);
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========================================
+   4. HEADER & NAVIGATION
+   ======================================== */
+
+header {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+}
+
+nav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom: 3px solid currentColor;
+}
+
+/* ========================================
+   5. FOOTER
+   ======================================== */
+
+footer {
+  width: 100%;
+  padding: var(--space-xl) var(--space-lg);
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+footer .newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+footer .newsletter h3 {
+  margin-bottom: var(--space-sm);
+}
+
+footer .newsletter form {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+footer .newsletter input {
+  flex: 1;
+  min-width: 150px;
+  padding: var(--space-sm);
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  font-size: var(--text-base);
+  background: transparent;
+  color: inherit;
+}
+
+footer .newsletter input::placeholder {
+  opacity: 0.7;
+}
+
+footer .newsletter button {
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+footer .social {
+  display: flex;
+  gap: var(--space-lg);
+  margin: var(--space-md) 0;
+}
+
+footer .social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: var(--text-lg);
+  transition: transform 0.3s ease;
+}
+
+footer .social a:hover {
+  transform: scale(1.2);
+}
+
+footer .about-section {
+  padding-top: var(--space-lg);
+  border-top: 2px solid currentColor;
+  opacity: 0.9;
+}
+
+footer .links {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+footer .links a {
+  font-size: var(--text-base);
+}
+
+footer .copyright {
+  text-align: center;
+  font-size: var(--text-base);
+  opacity: 0.8;
+  margin-top: var(--space-md);
+}
+
+/* ========================================
+   6. SCRAPBOOK DESIGN ELEMENTS
+   ======================================== */
+
+/* Wave Curved Divider */
+.wave-divider {
+  width: 100%;
+  height: 60px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="%23f7efca" opacity="0.8"/></svg>') no-repeat center;
+  background-size: cover;
+  background-position: 0 0;
+  margin: var(--space-lg) 0;
+}
+
+/* Rough Paper Texture Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="0.5"/></filter><rect width="400" height="400" fill="%23f7efca" filter="url(%23noise)"/></svg>');
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Scrapbook Card Style */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   7. MAIN CONTENT SECTIONS
+   ======================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  width: 100%;
+}
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+section h2 {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.view-all {
+  font-size: var(--text-base);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: gap 0.3s ease;
+}
+
+.view-all:hover {
+  gap: var(--space-md);
+}
+
+/* ========================================
+   8. HERO SECTION
+   ======================================== */
+
+.hero {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: var(--space-lg);
+}
+
+.hero h1 {
+  font-size: var(--text-4xl);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  font-size: var(--text-xl);
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   9. GRID LAYOUTS
+   ======================================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+/* ========================================
+   10. LOCATION CARDS
+   ======================================== */
+
+.location-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.location-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.location-card-content {
+  padding: var(--space-lg);
+}
+
+.location-card h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--heading-gold);
+}
+
+.location-card p {
+  margin-bottom: var(--space-md);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.read-more {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--accent-orange);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: var(--mustard-gold);
+  text-decoration: none;
+}
+
+/* ========================================
+   11. FEATURED SECTIONS
+   ======================================== */
+
+.featured-large {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.featured-large-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.featured-text h3 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-md);
+}
+
+/* ========================================
+   12. IMAGE GALLERIES
+   ======================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.gallery-item {
+  position: relative;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: var(--space-lg);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+/* ========================================
+   13. BUTTONS & INTERACTIONS
+   ======================================== */
+
+button, .btn {
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-secondary);
+}
+
+.btn-primary {
+  background: var(--heading-gold);
+  color: var(--accent-brown);
+}
+
+.btn-primary:hover {
+  background: var(--accent-orange);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--accent-orange);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--mustard-gold);
+}
+
+/* ========================================
+   14. ABOUT PAGE SPECIFICS
+   ======================================== */
+
+.about-section-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--space-xl);
+  border-radius: 8px;
+  margin-bottom: var(--space-lg);
+}
+
+.about-section-content h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.references-list {
+  list-style: none;
+  padding: 0;
+}
+
+.references-list li {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+  position: relative;
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.references-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--heading-gold);
+  font-weight: bold;
+}
+
+/* ========================================
+   15. RESPONSIVE DESIGN - TABLET (768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 18px;
+    --text-2xl: 20px;
+    --text-3xl: 28px;
+    --text-4xl: 32px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  nav ul {
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .hero {
+    height: 300px;
+  }
+
+  .hero h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-large {
+    grid-template-columns: 1fr;
+  }
+
+  section h2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  footer {
+    padding: var(--space-lg);
+  }
+
+  footer .newsletter form {
+    flex-direction: column;
+  }
+
+  footer .newsletter input {
+    min-width: 100%;
+  }
+}
+
+/* ========================================
+   16. RESPONSIVE DESIGN - MOBILE (390px)
+   ======================================== */
+
+@media (max-width: 390px) {
+  :root {
+    --text-base: 14px;
+    --text-lg: 16px;
+    --text-xl: 16px;
+    --text-2xl: 18px;
+    --text-3xl: 24px;
+    --text-4xl: 28px;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+  }
+
+  header {
+    padding: var(--space-sm);
+  }
+
+  .logo {
+    font-size: var(--text-xl);
+  }
+
+  nav ul {
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+  }
+
+  .hero {
+    height: 250px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .hero-content {
+    padding: var(--space-md);
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card-image {
+    height: 150px;
+  }
+
+  .featured-large {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: var(--space-lg) 0;
+  }
+
+  footer {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  footer .social {
+    gap: var(--space-md);
+  }
+
+  footer .links {
+    gap: var(--space-md);
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  p {
+    font-size: var(--text-base);
+  }
+}
+
+/* ========================================
+   17. PAGE-SPECIFIC COLOUR OVERRIDES
+   ======================================== */
+
+/* HOME PAGE (index.html) */
+body.home-page {
+  background-color: var(--bg-cream);
+}
+
+body.home-page header {
+  background: transparent;
+  color: var(--bg-army-green);
+}
+
+body.home-page header a {
+  color: var(--bg-army-green);
+}
+
+body.home-page main {
+  background-color: var(--bg-cream);
+}
+
+body.home-page main p {
+  color: var(--accent-brown);
+}
+
+body.home-page footer {
+  background-color: var(--accent-brown);
+  color: var(--bg-cream);
+}
+
+body.home-page footer a {
+  color: var(--bg-cream);
+}
+
+body.home-page footer a:hover {
+  color: var(--heading-gold);
+}
+
+body.home-page footer input {
+  border-color: var(--bg-cream);
+  color: var(--bg-cream);
+}
+
+body.home-page footer button {
+  background: var(--heading-gold);
+  color: var(--accent-brown);
+}
+
+/* NATURE PAGES (pages 2, 3, 4) */
+body.nature-page {
+  background-color: white;
+}
+
+body.nature-page header {
+  background-color: var(--bg-army-green);
+  color: var(--heading-gold);
+}
+
+body.nature-page header a {
+  color: var(--heading-gold);
+}
+
+body.nature-page main {
+  background-color: white;
+}
+
+body.nature-page main p {
+  color: var(--bg-army-green);
+}
+
+body.nature-page main h1, body.nature-page main h2 {
+  color: var(--bg-army-green);
+}
+
+body.nature-page footer {
+  background-color: var(--bg-army-green);
+  color: var(--heading-gold);
+}
+
+body.nature-page footer a {
+  color: var(--heading-gold);
+}
+
+body.nature-page footer a:hover {
+  color: var(--bg-mango);
+}
+
+body.nature-page footer input {
+  border-color: var(--heading-gold);
+  color: var(--heading-gold);
+}
+
+body.nature-page footer button {
+  background: var(--heading-gold);
+  color: var(--bg-army-green);
+}
+
+/* CULTURE PAGES (pages 5, 6, 7) */
+body.culture-page {
+  background-color: white;
+}
+
+body.culture-page header {
+  background-color: var(--bg-mango);
+  color: var(--accent-brown);
+}
+
+body.culture-page header a {
+  color: var(--accent-brown);
+}
+
+body.culture-page main {
+  background-color: white;
+}
+
+body.culture-page main p {
+  color: var(--accent-brown);
+}
+
+body.culture-page main h1, body.culture-page main h2 {
+  color: var(--accent-orange);
+}
+
+body.culture-page footer {
+  background-color: var(--bg-mango);
+  color: var(--accent-brown);
+}
+
+body.culture-page footer a {
+  color: var(--accent-brown);
+}
+
+body.culture-page footer a:hover {
+  color: var(--accent-orange);
+}
+
+body.culture-page footer input {
+  border-color: var(--accent-brown);
+  color: var(--accent-brown);
+}
+
+body.culture-page footer button {
+  background: var(--accent-brown);
+  color: var(--bg-mango);
+}
+
+/* ABOUT PAGE (page 8) */
+body.about-page {
+  background-color: var(--bg-cream);
+}
+
+body.about-page header {
+  background-color: var(--bg-cream);
+  color: var(--bg-army-green);
+}
+
+body.about-page header a {
+  color: var(--bg-army-green);
+}
+
+body.about-page main {
+  background-color: var(--bg-cream);
+}
+
+body.about-page main p {
+  color: var(--accent-brown);
+}
+
+body.about-page footer {
+  background-color: var(--bg-cream);
+  color: var(--accent-brown);
+}
+
+body.about-page footer a {
+  color: var(--accent-brown);
+}
+
+body.about-page footer a:hover {
+  color: var(--accent-orange);
+}
+
+body.about-page footer input {
+  border-color: var(--accent-brown);
+  color: var(--accent-brown);
+}
+
+body.about-page footer button {
+  background: var(--accent-brown);
+  color: var(--bg-cream);
+}
